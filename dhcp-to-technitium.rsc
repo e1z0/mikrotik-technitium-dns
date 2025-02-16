@@ -1,11 +1,11 @@
 # (c) 2024 e1z0
-:local DHCPtag   "#LAB01#DHCP2DNS#"                           # Used in dns record comments
-:local LogPrefix "DHCP2DNS ($leaseServerName)"                # used in router logging
-:local domain "lab01.domain.local"                            # Domain name or domain name with prefix
-:local dnsApiUrl "https://technitium.local/api/zones/records" # Technitium master server api endpoint
-:local apiKey "API_KEY"                                       # API Key from Technitium DNS
-:local zone "domain.local"                                    # DNS Zone name in technitium DNS
-:local ptrzone "168.192.in-addr.arpa"                         # PTR Zone name in technitium DNS
+:local DHCPtag   "#LAB01#DHCP2DNS#";                           # Used in dns record comments
+:local LogPrefix "DHCP2DNS ($leaseServerName)";                # used in router logging
+:local domain "lab01.domain.local";                            # Domain name or domain name with prefix
+:local dnsApiUrl "https://technitium.local/api/zones/records"; # Technitium master server api endpoint
+:local apiKey "API_KEY";                                       # API Key from Technitium DNS
+:local zone "domain.local";                                    # DNS Zone name in technitium DNS
+:local ptrzone "168.192.in-addr.arpa";                         # PTR Zone name in technitium DNS
 
 ###
 # Functions
