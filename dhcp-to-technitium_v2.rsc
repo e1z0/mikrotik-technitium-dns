@@ -24,7 +24,7 @@
 :local LogPrefix ("DHCP2DNS (" . $leaseServerName . ")")
 :local debug true
 :local domain "lab01.domain.com"
-:local zone "efn.lt"
+:local zone "domain.com"
 :local dnsApiUrl "https://dns.domain.com/api/zones/records"
 :local apiKey "secret"
 :local prefix "none"
