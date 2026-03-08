@@ -964,18 +964,20 @@ function ptrRecordToIpv4ByPrefix($name, $ptrPrefix)
     $name = trim($name, '.');
     $nameParts = explode('.', $name);
 
-    if (count($nameParts) === 1) {
-        if (!isOctet($nameParts[0])) {
+    foreach ($nameParts as $p) {
+        if (!isOctet($p)) {
             return '';
         }
+    }
+
+    if (count($nameParts) === 1) {
+        // 228 -> 10.2.0.228
         return $prefixParts[0] . '.' . $prefixParts[1] . '.0.' . $nameParts[0];
     }
 
     if (count($nameParts) === 2) {
-        if (!isOctet($nameParts[0]) || !isOctet($nameParts[1])) {
-            return '';
-        }
-        return $prefixParts[0] . '.' . $prefixParts[1] . '.' . $nameParts[0] . '.' . $nameParts[1];
+        // 228.11 -> 10.2.11.228
+        return $prefixParts[0] . '.' . $prefixParts[1] . '.' . $nameParts[1] . '.' . $nameParts[0];
     }
 
     return '';
